@@ -65,5 +65,6 @@ print ("Hosts = ")
 print (json.dumps(response.json(), indent=4, separators=(',', ': ')))
 
 r_resp=response.json()
-
-print(r_resp["response"][0]["hostIp"])
+d=dict()
+d[(r_resp["response"][0]["hostIp"],r_resp["response"][0]["connectedAPName"])]=r_resp["response"][0]["hostMac"]
+print(d)
